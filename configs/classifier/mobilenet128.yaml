@@ -1,0 +1,16 @@
+classifier:
+  arch: 'linear'
+  norm: 'layer'
+  
+embeddings_extractor:
+  arch: 'mobilenetv2'
+  embedding_dim: 128
+  
+training:
+  batch_size: 128
+  nepochs: 200
+  min_lr: 0.00001
+  max_lr: 0.00001
+  step_size: 20
+  patience: 10
+  mixup_factor: 0.5

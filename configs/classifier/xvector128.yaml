@@ -1,0 +1,15 @@
+classifier:
+  arch: 'arcface'
+
+embeddings_extractor:
+  arch: 'x-vector'
+  embedding_dim: 128
+
+training:
+  batch_size: 128
+  nepochs: 200
+  min_lr: 0.001
+  max_lr: 0.001
+  step_size: 200
+  patience: 200
+  mixup_factor: 0.5

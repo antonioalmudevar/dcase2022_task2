@@ -1,0 +1,20 @@
+import argparse
+
+from dcase2022_task2 import train_embeddings, SECTIONS
+
+def parse_args():
+
+    parser = argparse.ArgumentParser(description='Train')
+    parser.add_argument('config_data', nargs='?', type=str, help='config data file')
+    parser.add_argument('config_class', nargs='?', type=str, help='config class file')
+    parser.add_argument('--sections', type=int, nargs='+', choices=SECTIONS,\
+        help='choose data sections')
+    parser.add_argument('--plot_tsne', action='store_true', \
+        help='Plot t-sne representation of validation embeddings (this can cause memory problems)')
+        
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    train_embeddings(args)

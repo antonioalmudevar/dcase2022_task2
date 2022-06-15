@@ -1,0 +1,21 @@
+classifier:
+  arch: 'arcface'
+  norm: 'layer'
+
+embeddings_extractor:
+  arch: 'ViT'
+  embedding_dim: 192
+  depth: 12
+  heads: 6
+  mlp_dim: 768
+  pool: 'cls'
+  dropout: 0.1
+  emb_dropout: 0
+
+training:
+  batch_size: 128
+  nepochs: 100
+  min_lr: 0.00001
+  max_lr: 0.00001
+  step_size: 20
+  mixup_factor: 0.5

@@ -1,0 +1,19 @@
+import argparse
+from dcase2022_task2 import make_decisions
+
+def parse_args():
+
+    parser = argparse.ArgumentParser(description='Train')
+    parser.add_argument('config_data', nargs='?', type=str, help='config data file')
+    parser.add_argument('config_class', nargs='?', type=str, help='config class file')
+    parser.add_argument('--dataset', type=str, choices=["dev", "eval"],\
+        default="eval", help="choose dataset")
+        
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    make_decisions(args, system=1)
+    make_decisions(args, system=2)
+    make_decisions(args, system=3)

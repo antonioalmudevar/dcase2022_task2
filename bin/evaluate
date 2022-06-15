@@ -1,0 +1,20 @@
+import argparse
+
+from dcase2022_task2 import evaluate, SECTIONS
+
+def parse_args():
+
+    parser = argparse.ArgumentParser(description='Train')
+    parser.add_argument('config_data', nargs='?', type=str, help='config data file')
+    parser.add_argument('config_class', nargs='?', type=str, help='config class file')
+    parser.add_argument('--sections', type=int, nargs='+', choices=SECTIONS,\
+        help='choose data sections')
+    parser.add_argument('--embed_epochs', type=int, default=-1, \
+        help='number of epochs that embeddings extractor has been trained')
+        
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    evaluate(args)

@@ -1,0 +1,20 @@
+import argparse
+
+from dcase2022_task2.evaluate_final import *
+from dcase2022_task2.utils import count_parameters
+
+def parse_args():
+
+    parser = argparse.ArgumentParser(description='Train')
+    parser.add_argument('config_data', nargs='?', type=str, help='config data file')
+    parser.add_argument('config_class', nargs='?', type=str, help='config class file')
+        
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    print("Number of parameters: {}\n".format(count_parameters(args)))
+    evaluate_1(args)
+    evaluate_2(args)
+    evaluate_3(args)

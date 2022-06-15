@@ -1,0 +1,8 @@
+max_audios: "inf"
+n_fft: 1024
+hop_length: 512
+n_mels: 128
+n_columns: 64
+hop_columns: 4
+target_sample_rate: 16000
+db: True
